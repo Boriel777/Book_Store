@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/links/font-face.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Dali's Bookstore</title>
 </head>
-<body>
+
+<body onload="init();">
     <main>
         <h1>Willkommen zu Dali's Bookstore</h1>
+        <section id="library_lobby">
+            <h2>Liste aller Bücher</h2>
+            <p>Hier kannst du dich zu jeweiligen buch bewegen:</p>
+            <nav class="library_navigation">
+                <ul id="library_nav" ></ul>
+            </nav>
+        </section>
+        <section id="books">
 
+        </section>
     </main>
+    <footer>
+        &copy;2026 - Dalibor Durbas
+    </footer>
+    <script src="./scripts/books.js"></script>
+    <script src="./script.js"></script>
+    <script src="./scripts/book_block.js"></script>
+    <script src="./scripts/book_nav.js"></script>
 </body>
-<script src="./script.js"></script>
-<script src="./scripts/books.json"></script>
 </html>

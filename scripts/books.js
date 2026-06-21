@@ -1,4 +1,4 @@
-[
+let booksLibrary = [
     {
       "name": "Die Geheimnisse des Ozeans",
       "author": "Clara Meer",
@@ -173,3 +173,5 @@
       ]
     }
   ]
+
+ 
