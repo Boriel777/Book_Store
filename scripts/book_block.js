@@ -14,13 +14,15 @@ function loadBooksBlock() {
 
         booksBlock.innerHTML += `
         <article class="books_block" id="book-${i}">
-                <header>
+                <header class="books_block_header">
                     <h4 class="book_genre">${bookGenre}</h4>
                     <img class="book_img" src="./assets/images/book_visual_compressed.jpg" alt="Foto von Jaredd Craig on Unsplash">
                 </header>
                 <main class="books_block_content">
-                    <p class="likes_number">${bookLikes}</p>
-                    <button class="like_icon">Like Icon</button>
+                    <div class="likes_wrapper">
+                        <p class="likes_number">${bookLikes}</p>
+                        <button class="like_btn"><img class="like_icon" src="./assets/images/heart-regular-full.svg" alt=""></button>
+                    </div>
                     <h4 class="book_name">${bookTitle}</h4>
                     <p class="book_author">${bookAuthor}</p>
                     <p class="book_published_year">${bookPublishedYear}</p>

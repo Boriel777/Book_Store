@@ -1,0 +1,243 @@
+/* New Styles */
+
+#header {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+h1 {
+    text-align: center;
+    font-weight: var(--font-xbold);
+    margin-bottom: 2rem;
+}
+
+/* Navigation */
+#library_lobby {
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    padding: 2rem 1.5rem;
+    z-index: 10;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 2rem;
+}
+
+.library_navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 0.25rem 0;
+    margin: 0;
+    scrollbar-width: thin;
+}
+
+.library_navigation a {
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    background: #eef2ff;
+    color: var(--color-accent);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: var(--font-bold);
+    transition: background 0.2s ease;
+}
+
+.library_navigation a:hover {
+    background: var(--color-accent);
+    color: #fff;
+}
+
+/* Book Grid */
+#books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--gap);
+}
+
+.books_block {
+    background: var(--color-card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.books_block:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.books_block>.books_block_header {
+    position: relative;
+}
+
+.book_img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.book_genre {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    cursor: default;
+    z-index: 1;
+}
+
+.books_block_content {
+    padding: 1rem 1.25rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.likes_wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+.like_btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.like_icon {
+    width: 35px;
+    height: 100%;
+    transition: transform .15s ease-in-out;
+}
+
+.like_icon:hover {
+    transform: scale(1.1);
+}
+
+.likes_number {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    margin-bottom: 0;
+}
+
+.book_name {
+    margin-top: 0.5rem;
+}
+
+.book_author,
+.book_published_year {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: 0.1rem;
+}
+
+.book_price {
+    font-weight: var(--font-bold);
+    color: var(--color-accent);
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+/* Comments */
+.books_block footer {
+    border-top: 1px solid #e5e7eb;
+    padding: 1rem 1.25rem;
+}
+
+.books_block footer h3 {
+    margin-bottom: 0.5rem;
+}
+
+.comment_wrapper {
+    max-height: 140px;
+    overflow-y: auto;
+    margin-bottom: 0.75rem;
+    padding-right: 5px;
+}
+
+.comment_wrapper::-webkit-scrollbar {
+    background-color: var(--color-accent-l);
+    width: 6px;
+    border-radius: 30px;
+}
+
+.comment_wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--color-accent);
+    border-radius: 30px;
+}
+
+.comment_wrapper ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.comment_content {
+    display: flex;
+    gap: 0.4rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 0.85rem;
+}
+
+.comment_content span {
+    font-weight: var(--font-bold);
+}
+
+.books_block form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.comment_input_field {
+    flex: 1;
+    border: 1px solid #d1d5db;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-family: var(--main-font);
+}
+
+.send_btn {
+    border: none;
+    background: none;
+    transition: transform .15s ease-in-out;
+}
+
+.send_btn:hover {
+    transform: scale(1.1)
+}
+
+.send_btn img {
+    width: 25px;
+}
+
+/* Page footer */
+body>footer {
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    padding: 2rem 0;
+}
+
+/* New Styles END */
