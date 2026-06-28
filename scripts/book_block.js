@@ -6,7 +6,17 @@ function loadBooksBlock() {
     for (let i = 0; i < booksLibrary.length; i++) {
         const bookGenre = booksLibrary[i].genre;
         const bookTitle = booksLibrary[i].name;
-        const bookLikes = booksLibrary[i].likes;
+        let bookLikes; if (likesMemory[i] === undefined || likesMemory[i] === null) {
+            bookLikes = { isLiked: false, currentLikes: booksLibrary[i].likes };
+        } else {
+            bookLikes = likesMemory[i];
+        };
+        let initLikeImg;
+        if (bookLikes.isLiked) {
+            initLikeImg = './assets/images/heart-solid-full.svg';
+        } else {
+            initLikeImg = './assets/images/heart-regular-full.svg';
+        };
         const bookAuthor = booksLibrary[i].author;
         const bookPublishedYear = booksLibrary[i].publishedYear;
         const bookPrice = booksLibrary[i].price;
@@ -20,8 +30,8 @@ function loadBooksBlock() {
                 </header>
                 <main class="books_block_content">
                     <div class="likes_wrapper">
-                        <p class="likes_number">${bookLikes}</p>
-                        <button class="like_btn"><img class="like_icon" src="./assets/images/heart-regular-full.svg" alt=""></button>
+                        <p class="likes_number likes_number-${i}">${bookLikes.currentLikes}</p>
+                        <button onclick="toggleLikeBtn(${i})" id="like_btn-${i}" class="like_btn" aria-pressed="${bookLikes.isLiked}" aria-label="Gefällt mir"><img class="like_icon like_icon-${i}" src="${initLikeImg}" alt=""></button> 
                     </div>
                     <h4 class="book_name">${bookTitle}</h4>
                     <p class="book_author">${bookAuthor}</p>
@@ -50,7 +60,7 @@ function loadBookComments(bookIndex) {
         const bookCommentContent = bookComments[commentIndex].comment;
 
         booksCommentsHTML += `
-            <li class="comment_content"><span>${bookCommentUser}:<span> <p>${bookCommentContent}</p></li>
+            <li class="comment_content"><span>${bookCommentUser} :</span> <p>${bookCommentContent}</p></li>
             `;
     };
     return booksCommentsHTML;

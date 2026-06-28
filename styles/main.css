@@ -121,9 +121,11 @@ h1 {
 
 .like_btn {
     border: none;
-    background: none;
     cursor: pointer;
-    width: fit-content;
+    margin: 0;
+    height: auto;
+    background: none;
+    width: max-content;
 }
 
 .like_icon {
@@ -177,17 +179,6 @@ h1 {
     padding-right: 5px;
 }
 
-.comment_wrapper::-webkit-scrollbar {
-    background-color: var(--color-accent-l);
-    width: 6px;
-    border-radius: 30px;
-}
-
-.comment_wrapper::-webkit-scrollbar-thumb {
-    background-color: var(--color-accent);
-    border-radius: 30px;
-}
-
 .comment_wrapper ul {
     list-style: none;
     padding-left: 0;
@@ -195,6 +186,7 @@ h1 {
 
 .comment_content {
     display: flex;
+    flex-direction: column;
     gap: 0.4rem;
     padding: 0.4rem 0;
     border-bottom: 1px solid #f1f1f1;
